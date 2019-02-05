@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+plugins {
+    id "org.springframework.boot" version "2.0.1.RELEASE"
+}
+
+group 'assign'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE',
+            'org.springframework:spring-beans:5.1.3.RELEASE',
+            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3',
+            'org.choco-solver:choco-solver:4.0.9'
+    testCompile 'org.springframework:spring-test:4.1.4.RELEASE',
+            'org.testng:testng:6.1.1',
+            'org.hamcrest:hamcrest-all:1.3'
+}
+
+bootRun {
+    main = 'com.servicepartner.Application'
+}
+
+test {
+    useTestNG()
+    testLogging.showStandardStreams = true
+}
